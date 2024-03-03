@@ -19,6 +19,14 @@
   --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
   --vt-c-text-dark-1: var(--vt-c-white);
   --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+
+  --royal-blue-color: #2405F2;
+  --tint-blue-color: #1C1E53;
+  --dark-blue-color: #282938;
+  --yellow-color: #FCD980;
+  --grey-color: #F4F6FC;
+  --accent-color: #EEF4FA;
+  --white-color: #ffffff;
 }
 
 /* semantic color variables for this project */
