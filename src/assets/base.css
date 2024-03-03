@@ -20,6 +20,10 @@
   --vt-c-text-dark-1: var(--vt-c-white);
   --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
 
+  --content-width: 1280px;
+  --container-offset: 20px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+
   --royal-blue-color: #2405F2;
   --tint-blue-color: #1C1E53;
   --dark-blue-color: #282938;
@@ -27,6 +31,7 @@
   --grey-color: #F4F6FC;
   --accent-color: #EEF4FA;
   --white-color: #ffffff;
+  --font-color: rgba(40,41,56,.7);
 }
 
 /* semantic color variables for this project */
@@ -68,13 +73,14 @@
 
 body {
   min-height: 100vh;
-  color: var(--color-text);
-  background: var(--color-background);
+  color: var(--font-color);
+  background: var(--white-color);
   transition:
     color 0.5s,
     background-color 0.5s;
   line-height: 1.6;
   font-family:
+    "Poppins",
     Inter,
     -apple-system,
     BlinkMacSystemFont,
@@ -87,8 +93,14 @@ body {
     'Droid Sans',
     'Helvetica Neue',
     sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+	margin: 0 auto;
+	padding: 0 var(--container-offset);
+	max-width: var(--container-width);
 }
