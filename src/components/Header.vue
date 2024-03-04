@@ -1,46 +1,74 @@
 <script>
+import { ref, onMounted, onBeforeUnmount } from 'vue'
+
 export default {
-  data() {
-    return {
-      isMenuOpen: false,
-      isDesktop: true,
+  setup() {
+    // burger menu
+    const isMenuOpen = ref(false);
+    const isDesktop = ref(true);
+
+    const toggleMenu = () => {
+      isMenuOpen.value = !isMenuOpen.value;
     };
-  },
-  methods: {
-    toggleMenu() {
-      this.isMenuOpen = !this.isMenuOpen;
-    },
-    checkViewport() {
-      this.isDesktop = window.innerWidth > 576;
-    },
-  },
-  mounted() {
-    this.checkViewport();
-    window.addEventListener('resize', this.checkViewport);
-  },
-  beforeUnmount() {
-    window.removeEventListener('resize', this.checkViewport);
+
+    const checkViewport = () => {
+      isDesktop.value = window.innerWidth > 576;
+    };
+
+    onMounted(() => {
+      checkViewport();
+      window.addEventListener('resize', checkViewport);
+    });
+
+    onBeforeUnmount(() => {
+      window.removeEventListener('resize', checkViewport);
+    });
+
+    // fixed header
+    const header = ref(null);
+
+    const handleScroll = () => {
+      if (window.pageYOffset > 900) {
+        header.value.classList.add('header-fixed');
+      } else {
+        header.value.classList.remove('header-fixed');
+      }
+    };
+
+    onMounted(() => {
+      window.addEventListener('scroll', handleScroll);
+    });
+
+    return {
+      handleScroll,
+      header,
+      isMenuOpen,
+      isDesktop,
+      toggleMenu,
+    };
   },
 };
 </script>
 
 <template>
-  <header class="header">
+  <header class="header" ref="header" v-scroll="handleScroll">
     <div class="container">
       <div class="header__container">
-        <div class="logo">
-          <img src="../assets/logo.svg" alt="">VueAgency
-        </div>
+        <RouterLink to="/">
+          <div class="logo">
+            <img src="../assets/logo.svg" alt="">VueAgency
+          </div>
+        </RouterLink>
         <transition name="fade">
           <nav v-if="isMenuOpen || isDesktop" class="header__nav">
             <div class="header__menu">
-              <RouterLink to="/">Home</RouterLink>
-              <RouterLink to="/about-us">About us</RouterLink>
-              <RouterLink to="/features">Features</RouterLink>
-              <RouterLink to="/pricing">Pricing</RouterLink>
-              <RouterLink to="/faq">FAQ</RouterLink>
-              <RouterLink to="/blog">Blog</RouterLink>
-              <RouterLink to="/contact-us">Contact us</RouterLink>
+              <RouterLink @click="toggleMenu" to="/">Home</RouterLink>
+              <RouterLink @click="toggleMenu" to="/about-us">About us</RouterLink>
+              <RouterLink @click="toggleMenu" to="/features">Features</RouterLink>
+              <RouterLink @click="toggleMenu" to="/pricing">Pricing</RouterLink>
+              <RouterLink @click="toggleMenu" to="/faq">FAQ</RouterLink>
+              <RouterLink @click="toggleMenu" to="/blog">Blog</RouterLink>
+              <RouterLink @click="toggleMenu" to="/contact-us">Contact us</RouterLink>
             </div>
           </nav>
         </transition>
@@ -59,8 +87,17 @@ export default {
 
 <style lang="scss">
 .header {
+  width: 100%;
   padding: 28px 0;
   background-color: var(--tint-blue-color);
+  transition: position 10s ease-in;
+  &.header-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 150;
+  }
   &__container {
     display: flex;
     align-items: center;
@@ -164,7 +201,7 @@ export default {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       padding: 44px 20px;
       background-color: var(--grey-color);
       &-toggle {
