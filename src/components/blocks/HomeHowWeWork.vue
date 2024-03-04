@@ -1,4 +1,17 @@
-<script></script>
+<script>
+export default {
+  data() {
+    return {
+      pointItems: [
+        { icon: '01', title: 'Strategy', description: 'Euismod faucibus turpis eu gravida mi. Pellentesque et velit aliquam.' },
+        { icon: '02', title: 'Wireframing', description: 'Euismod faucibus turpis eu gravida mi. Pellentesque et velit aliquam.' },
+        { icon: '03', title: 'Design', description: 'Euismod faucibus turpis eu gravida mi. Pellentesque et velit aliquam.' },
+        { icon: '04', title: 'Development', description: 'Euismod faucibus turpis eu gravida mi. Pellentesque et velit aliquam.' },
+      ],
+    };
+  },
+};
+</script>
 
 <template>
   <section class="home-howwework">
@@ -13,25 +26,10 @@
         </div>
         <div class="home-howwework__right">
           <div class="points__list">
-            <div class="point-item">
-              <div class="point-item__icon">01</div>
-              <h3 class="title-h5">Strategy</h3>
-              <p>Euismod faucibus turpis eu gravida mi. Pellentesque et velit aliquam.</p>
-            </div>
-            <div class="point-item">
-              <div class="point-item__icon">02</div>
-              <h3 class="title-h5">Wireframing</h3>
-              <p>Euismod faucibus turpis eu gravida mi. Pellentesque et velit aliquam.</p>
-            </div>
-            <div class="point-item">
-              <div class="point-item__icon">03</div>
-              <h3 class="title-h5">Design</h3>
-              <p>Euismod faucibus turpis eu gravida mi. Pellentesque et velit aliquam.</p>
-            </div>
-            <div class="point-item">
-              <div class="point-item__icon">04</div>
-              <h3 class="title-h5">Development</h3>
-              <p>Euismod faucibus turpis eu gravida mi. Pellentesque et velit aliquam.</p>
+            <div v-for="item in pointItems" :key="item.icon" class="point-item">
+              <div class="point-item__icon">{{ item.icon }}</div>
+              <h3 class="title-h5">{{ item.title }}</h3>
+              <p>{{ item.description }}</p>
             </div>
           </div>
         </div>

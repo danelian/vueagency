@@ -38,6 +38,17 @@ section {
 .title-h5:not(:last-child) {
   margin-bottom: 8px;
 }
+.title-h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--dark-blue-color);
+}
+.title-h6:not(:last-child) {
+  margin-bottom: 8px;
+}
 
 .row-buttons {
   display: flex;
@@ -107,6 +118,9 @@ section {
   .title-h5 {
     font-size: 24px;
   }
+  .title-h6 {
+    font-size: 20px;
+  }
   .row-buttons {
     margin-top: 36px;
   }
@@ -139,6 +153,9 @@ section {
   }
   .title-h5 {
     font-size: 20px;
+  }
+  .title-h6 {
+    font-size: 18px;
   }
   .row-buttons {
     margin-top: 28px;
