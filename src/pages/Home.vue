@@ -2,10 +2,12 @@
 import HomeHero from '../components/blocks/HomeHero.vue'
 import HomeHowWeWork from '../components/blocks/HomeHowWeWork.vue'
 import HomePortfolio from '../components/blocks/HomePortfolio.vue'
+import HomeFeatures from '../components/blocks/HomeFeatures.vue'
 </script>
 
 <template>
   <HomeHero />
   <HomeHowWeWork />
   <HomePortfolio />
+  <HomeFeatures />
 </template>
