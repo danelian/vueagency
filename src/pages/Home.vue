@@ -1,7 +1,9 @@
 <script setup>
 import HomeHero from '../components/blocks/HomeHero.vue'
+import HomeHowWeWork from '../components/blocks/HomeHowWeWork.vue'
 </script>
 
 <template>
   <HomeHero />
+  <HomeHowWeWork />
 </template>
