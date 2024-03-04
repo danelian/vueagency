@@ -66,7 +66,7 @@ export default {
               <RouterLink @click="toggleMenu" to="/about-us">About us</RouterLink>
               <RouterLink @click="toggleMenu" to="/features">Features</RouterLink>
               <RouterLink @click="toggleMenu" to="/pricing">Pricing</RouterLink>
-              <RouterLink @click="toggleMenu" to="/faq">FAQ</RouterLink>
+              <RouterLink @click="toggleMenu" to="/portfolio">Portfolio</RouterLink>
               <RouterLink @click="toggleMenu" to="/blog">Blog</RouterLink>
               <RouterLink @click="toggleMenu" to="/contact-us">Contact us</RouterLink>
             </div>

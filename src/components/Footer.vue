@@ -11,9 +11,10 @@
             </div>
           </RouterLink>
           <p>We are always open to discuss your project and improve your online presence.</p>
+          <RouterLink to="/privacy-policy">Privacy Policy</RouterLink>
         </div>
         <div class="footer__right">
-          <h2 class="section-title">Lets Talk!</h2>
+          <h2 class="title-h2">Lets Talk!</h2>
           <p>We are always open to discuss your project, improve your online presence and help with your UX/UI design challenges.</p>
           <div class="socials">
             <a href="http://facebook.com" target="_blank" rel="noopener noreferrer">
@@ -89,7 +90,7 @@
             <RouterLink to="/about-us">About us</RouterLink>
             <RouterLink to="/features">Features</RouterLink>
             <RouterLink to="/pricing">Pricing</RouterLink>
-            <RouterLink to="/faq">FAQ</RouterLink>
+            <RouterLink to="/portfolio">Portfolio</RouterLink>
             <RouterLink to="/blog">Blog</RouterLink>
             <RouterLink to="/contact-us">Contact us</RouterLink>
           </div>
@@ -122,11 +123,21 @@
   }
   &__left,
   &__right {
+    >a {
+      margin-top: 12px;
+      display: inline-flex;
+      text-decoration: none;
+      color: rgba(244,246,252,.8);
+      transition: color .3s ease;
+      &:hover {
+        color: var(--white-color);
+      }
+    }
     p {
       max-width: 400px;
       color: rgba(244,246,252,.8);
     }
-    .section-title {
+    .title-h2 {
       color: var(--white-color);
     }
   }
@@ -134,6 +145,7 @@
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
+    margin-top: 12px;
     padding: 18px 36px;
     width: 520px;
     background-color: var(--yellow-color);
@@ -289,7 +301,7 @@
     }
     &__left,
     &__right {
-      .section-title {
+      .title-h2 {
         margin-bottom: 8px;
       }
       p {
