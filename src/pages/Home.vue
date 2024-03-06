@@ -5,6 +5,7 @@ import HomePortfolio from '../components/blocks/HomePortfolio.vue'
 import HomeFeatures from '../components/blocks/HomeFeatures.vue'
 import HomeReviews from '../components/blocks/HomeReviews.vue'
 import Faq from '../components/blocks/Faq.vue'
+import HomeCta from '../components/blocks/HomeCta.vue'
 </script>
 
 <template>
@@ -14,4 +15,5 @@ import Faq from '../components/blocks/Faq.vue'
   <HomeFeatures />
   <HomeReviews />
   <Faq />
+  <HomeCta />
 </template>
