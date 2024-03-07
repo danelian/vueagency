@@ -86,7 +86,6 @@ const submitForm = () => {
 .home-cta {
   padding-top: 0;
   padding-bottom: 0;
-  margin-bottom: 100px;
   &__container {
     display: flex;
     width: 100%;
