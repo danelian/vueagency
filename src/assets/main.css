@@ -84,6 +84,7 @@ section {
   text-decoration: none;
   color: var(--dark-blue-color);
   border-radius: 50px;
+  border: 0;outline: none;
   background-color: var(--yellow-color);
   transition: all .3s ease;
 }

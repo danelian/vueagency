@@ -26,6 +26,16 @@ const rules = computed(() => ({
 }))
 
 const v = useVuelidate(rules, {nameField, emailField, figmaField})
+
+const isFormPending = computed(() => v.$pending);
+
+const submitForm = () => {
+  if (v.$pending) {
+    // Если есть поля в ожидании валидации, ничего не делаем
+    return;
+  }
+  alert('Thank you! Form submutted.');
+}
 </script>
 
 <template>
@@ -41,7 +51,7 @@ const v = useVuelidate(rules, {nameField, emailField, figmaField})
         <div class="home-cta__form">
           <h3 class="title-h5">Send inquiry</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-          <form action="#">
+          <form @submit.prevent="submitForm">
             <Input 
               name="name" 
               placeholder="Your Name" 
@@ -63,6 +73,7 @@ const v = useVuelidate(rules, {nameField, emailField, figmaField})
               :error="v.figmaField.$errors"
               class="dark"
             />
+            <button class="button-primary" :disabled="isFormPending">Send an Inquiry</button>
           </form>
           <RouterLink to="/contact-us" class="link-witharrow">Get in touch with us<svg width="26" height="13" viewBox="0 0 26 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M20.1587 1.21301L24.787 5.84135C25.071 6.12537 25.071 6.58585 24.787 6.86987L20.1587 11.4982C19.8746 11.7822 19.4141 11.7822 19.1301 11.4982C18.8461 11.2142 18.8461 10.7537 19.1301 10.4697L22.5169 7.08288H1V5.62834H22.5169L19.1301 2.24153C18.8461 1.95751 18.8461 1.49703 19.1301 1.21301C19.4141 0.928996 19.8746 0.928996 20.1587 1.21301Z" fill="currentColor"/></svg></RouterLink>
         </div>
@@ -88,6 +99,7 @@ const v = useVuelidate(rules, {nameField, emailField, figmaField})
     &-wrapper {
       padding: 92px;
       color: var(--white-color);
+      height: 100%;
       background-color: rgba(28,30,83,.5);
       .title-h2 {
         color: var(--white-color);
@@ -112,6 +124,59 @@ const v = useVuelidate(rules, {nameField, emailField, figmaField})
     }
     form {
       margin-top: 40px;
+    }
+    .button-primary {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .home-cta {
+    &__content {
+      &-wrapper {
+        padding: 48px;
+      }
+    }
+    &__form {
+      padding: 48px 48px 32px 48px;
+      p {
+        font-size: 15px;
+      }
+      form {
+        margin-top: 32px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .home-cta {
+    &__container {
+      flex-direction: column;
+    }
+    &__content {
+      width: 100%;
+      &-wrapper {
+        padding: 32px;
+      }
+    }
+    &__form {
+      width: 100%;
+      padding: 32px;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .home-cta {
+    &__content {
+      &-wrapper {
+        padding: 20px;
+      }
+    }
+    &__form {
+      padding: 20px;
     }
   }
 }

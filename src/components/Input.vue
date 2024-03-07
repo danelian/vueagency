@@ -131,4 +131,14 @@ const updateValue = (e) => {
 .v-leave-to {
   opacity: 0;
 }
+
+@media screen and (max-width: 576px) {
+  .input {
+    &-text {
+      padding: 0 20px;
+      height: 44px;
+      font-size: 15px;
+    }
+  }
+}
 </style>
