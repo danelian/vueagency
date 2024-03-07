@@ -1,5 +1,20 @@
+<script>
+import { useStore } from '@/store';
+import Team from '@/components/blocks/Team.vue';
+
+export default {
+  components: {
+    Team,
+  },
+  setup() {
+    const store = useStore();
+    return {
+      teamMembers: store.teamMembers,
+    };
+  },
+};
+</script>
+
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <Team :teamMembers="teamMembers" />
 </template>

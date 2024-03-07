@@ -103,5 +103,31 @@ export const useStore = defineStore({
         description: 'See how pivoting to Webflow changed one person’s sales strategy and allowed him to attract',
       },
     ],
+    teamMembers: [
+      {
+        id: 1,
+        name: 'John Smith',
+        position: 'CEO',
+        photo: 'john-smith.jpg',
+      },
+      {
+        id: 2,
+        name: 'Simon Adams',
+        position: 'CTO',
+        photo: 'simon-adams.jpg',
+      },
+      {
+        id: 3,
+        name: 'Paul Jones',
+        position: 'Design Lead',
+        photo: 'paul-jones.jpg',
+      },
+      {
+        id: 4,
+        name: 'Sara Hardin',
+        position: 'Project Manager',
+        photo: 'sara-hardin.jpg',
+      },
+    ],
   }),
 });
