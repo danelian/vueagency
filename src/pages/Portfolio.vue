@@ -2,11 +2,13 @@
 import { useStore } from '../store';
 import PortfolioHero from '@/components/blocks/PortfolioHero.vue'
 import PortfolioArchive from '@/components/blocks/PortfolioArchive.vue'
+import PortfolioLets from '@/components/blocks/PortfolioLets.vue'
 
 export default {
   components: {
     PortfolioHero,
-    PortfolioArchive
+    PortfolioArchive,
+    PortfolioLets
   },
   setup() {
     const store = useStore();
@@ -21,4 +23,5 @@ export default {
 <template>
   <PortfolioHero />
   <PortfolioArchive />
+  <PortfolioLets />
 </template>
