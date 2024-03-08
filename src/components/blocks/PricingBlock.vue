@@ -55,6 +55,7 @@ export default {
 
 <style lang="scss" scoped>
 .pricing-block {
+  padding-bottom: 0;
   .heading {
     margin: 0 auto 60px;
     max-width: 560px;
