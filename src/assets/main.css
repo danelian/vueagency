@@ -100,6 +100,25 @@ section {
   background-color: #fde4a6;
 }
 
+.button-second {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 23px 48px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1;
+  text-decoration: none;
+  color: var(--white-color);
+  border-radius: 50px;
+  border: 0;outline: none;
+  background-color: var(--dark-blue-color);
+  transition: all .3s ease;
+}
+.button-second:hover {
+  background-color: #535460;
+}
+
 .link-witharrow {
   display: inline-flex;
   align-items: center;
@@ -191,7 +210,8 @@ section {
   .row-buttons button:not(:last-child) {
     margin-right: 20px;
   }
-  .button-primary {
+  .button-primary,
+  .button-second {
     padding: 16px 28px;
     font-size: 16px;
   }
@@ -237,7 +257,8 @@ section {
     margin-right: 0;
     margin-bottom: 20px;
   }
-  .button-primary {
+  .button-primary,
+  .button-second {
     width: 100%;
   }
   .link-witharrow {

@@ -129,5 +129,47 @@ export const useStore = defineStore({
         photo: 'sara-hardin.jpg',
       },
     ],
+    tariffs: [
+      {
+        price: '$299',
+        per: 'Per Design',
+        title: 'Landing Page ',
+        description: 'When you’re ready to go beyond prototyping in Figma, ',
+        points: [
+          { text: 'All limited links', included: true },
+          { text: 'Own analytics platform', included: true },
+          { text: 'Chat support', included: true },
+          { text: 'Optimize hashtags', included: false },
+          { text: 'Unlimited users', included: false },
+        ],
+      },
+      {
+        price: '$399',
+        per: 'Multi Design',
+        title: 'Website Page',
+        description: 'When you’re ready to go beyond prototyping in Figma, Webflow’s ready to help.',
+        points: [
+          { text: 'All limited links', included: true },
+          { text: 'Own analytics platform', included: true },
+          { text: 'Chat support', included: true },
+          { text: 'Optimize hashtags', included: true },
+          { text: 'Unlimited users', included: true },
+        ],
+      },
+      {
+        price: '$499 +',
+        per: 'Per Design',
+        title: 'Complex Project',
+        description: 'When you’re ready to go beyond prototyping in Figma',
+        points: [
+          { text: 'All limited links', included: true },
+          { text: 'Own analytics platform', included: true },
+          { text: 'Chat support', included: true },
+          { text: 'Optimize hashtags', included: true },
+          { text: 'Unlimited users', included: true },
+          { text: 'Assist and Help', included: true },
+        ],
+      },
+    ],
   }),
 });
