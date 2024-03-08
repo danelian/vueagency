@@ -1,9 +1,30 @@
 <script>
+import TariffsModal from '@/components/modals/TariffsModal.vue';
+
 export default {
+  components: {
+    TariffsModal,
+  },
+  data() {
+    return {
+      isModalVisible: false,
+      selectedTariff: null,
+    };
+  },
   props: {
     tariffs: Array,
-  }
-}
+  },
+  methods: {
+    openModal(index) {
+      this.isModalVisible = true;
+      this.selectedTariff = this.tariffs[index];
+    },
+    closeModal() {
+      this.isModalVisible = false;
+      this.selectedTariff = null;
+    },
+  },
+};
 </script>
 
 <template>
@@ -24,9 +45,10 @@ export default {
           <div class="points">
             <div v-for="(point, pointIndex) in tariff.points" :key="pointIndex" class="point" :class="{ 'point-true': point.included, 'point-false': !point.included }">{{ point.text }}</div>
           </div>
-          <button type="button" :class="{ 'button-primary': index === 1, 'button-second': index !== 1 }">Get started</button>
+          <button type="button" :class="{ 'button-primary': index === 1, 'button-second': index !== 1 }" @click="openModal(index)">Get started</button>
         </div>
       </div>
+      <TariffsModal :visible="isModalVisible" :selectedTariff="selectedTariff" @close="closeModal" />
     </div>
   </section>
 </template>
