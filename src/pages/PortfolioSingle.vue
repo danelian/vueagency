@@ -1,30 +1,42 @@
 <script>
 import { useStore } from '@/store';
+import Breadcrumbs from '@/components/Breadcrumbs.vue'
 import PortfolioLets from '@/components/blocks/PortfolioLets.vue'
 
 export default {
+  props: ['id'],
   components: {
+    Breadcrumbs,
     PortfolioLets
   },
   data() {
     return {
       post: {},
+      breadcrumbs: [],
     };
   },
   mounted() {
-    this.loadPostDetails(this.$route.params.id);
+     this.loadPostDetails(this.$route.params.id);
   },
   methods: {
     loadPostDetails(postId) {
       const store = useStore();
       const post = store.$state.cases.find((item) => item.id === Number(postId));
       this.post = post || {};
+
+      // Обновите массив хлебных крошек в вашем компоненте
+      this.breadcrumbs = [
+        { text: 'Home', to: '/' },
+        { text: 'Portfolio', to: '/portfolio' },
+        { text: this.post.title, to: null },
+      ];
     },
   },
 };
 </script>
 
 <template>
+  <Breadcrumbs :breadcrumbs="breadcrumbs" />
   <section class="single">
     <div class="container">
       <div class="single-top">
@@ -62,6 +74,7 @@ export default {
 
 <style lang="scss" scoped>
 .single {
+  padding-top: 80px;
   &-top {
     .title-h2 {
       max-width: 640px;

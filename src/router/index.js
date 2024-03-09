@@ -41,6 +41,7 @@ const router = createRouter({
       path: '/portfolio/:id',
       name: 'PortfolioSingle',
       component: PortfolioSingle,
+      props: true
     },
     {
       path: '/blog',
