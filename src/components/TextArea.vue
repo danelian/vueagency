@@ -1,56 +1,51 @@
 <script setup>
-const emit = defineEmits(['update:value'])
+const emit = defineEmits(['update:value']);
 
 const props = defineProps({
   error: {
     type: Array,
-    required: false
+    required: false,
   },
   value: {
     type: String,
-    default: ''
+    default: '',
   },
   name: {
     type: String,
-    required: true
-  },
-  type: {
-    type: String,
-    default: 'text'
+    required: true,
   },
   placeholder: {
     type: String,
-    required: true
+    required: true,
   },
   label: {
     type: String,
-    requred: true
-  }
-})
+    required: true,
+  },
+});
 
 const updateValue = (e) => {
-  emit('update:value', e.target.value)
-}
+  emit('update:value', e.target.value);
+};
 </script>
 
 <template>
   <div class="form-input">
     <label :for="name" class="input-label">{{ label }}</label>
-    <input 
-      class="input-text"
-      :type="type"
+    <textarea
+      class="input-textarea"
       :name="name"
       :id="name"
       :placeholder="placeholder"
       :value="value"
       @input="updateValue"
-      >
+    ></textarea>
     <TransitionGroup>
-      <div 
+      <div
         class="form-error"
         v-for="element of error"
         :key="element.$uid"
-        >
+      >
         <div class="form-error__message">{{ element.$message }}</div>
       </div>
     </TransitionGroup>
@@ -83,11 +78,11 @@ const updateValue = (e) => {
   }
 }
 .input {
-  &-text {
+  &-textarea {
     position: relative;
-    padding: 0 24px;
+    padding: 18px 24px;
     width: 100%;
-    height: 56px;
+    height: 120px;
     font-size: 16px;
     border-radius: 8px;
     border: 1px solid rgba(0,0,0,10%);
@@ -117,9 +112,8 @@ const updateValue = (e) => {
 
 @media screen and (max-width: 576px) {
   .input {
-    &-text {
-      padding: 0 20px;
-      height: 44px;
+    &-textarea {
+      padding: 14px 20px;
       font-size: 15px;
     }
     &-label {
