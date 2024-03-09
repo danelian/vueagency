@@ -5,10 +5,8 @@
     <div class="container">
       <div class="footer__top">
         <div class="footer__left">
-          <RouterLink to="/">
-            <div class="logo">
-              <img src="../assets/logo.svg" alt="">VueAgency
-            </div>
+          <RouterLink class="logo" to="/">
+            <img src="../assets/logo.svg" alt="">VueAgency
           </RouterLink>
           <p>We are always open to discuss your project and improve your online presence.</p>
           <RouterLink to="/privacy-policy">Privacy Policy</RouterLink>

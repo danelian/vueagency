@@ -54,10 +54,8 @@ export default {
   <header class="header" ref="header" v-scroll="handleScroll">
     <div class="container">
       <div class="header__container">
-        <RouterLink to="/">
-          <div class="logo">
-            <img src="../assets/logo.svg" alt="">VueAgency
-          </div>
+        <RouterLink class="logo" to="/">
+          <img src="../assets/logo.svg" alt="">VueAgency
         </RouterLink>
         <transition name="fade">
           <nav v-if="isMenuOpen || isDesktop" class="header__nav">
@@ -110,6 +108,7 @@ export default {
     justify-content: flex-start;
     font-size: 20px;
     font-weight: 700;
+    text-decoration: none;
     color: var(--white-color);
     img {
       height: 36px;
