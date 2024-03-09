@@ -83,9 +83,15 @@ export const useStore = defineStore({
       {
         id: 1,
         date: '27 Jan 2021',
+        author: 'Danel Daneliani',
         title: 'How one Webflow user grew his single person consultancy from $0-100K in 14 months',
         image: '/public/single-blog/single-1.jpg',
         description: 'See how pivoting to Webflow changed one person’s sales strategy and allowed him to attract',
+        heading2: 'About the project',
+        paragraph2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        heading3: 'How we do it',
+        paragraph3: 'Labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        lists: ['Lorem ipsum dolor sit amet, consectetur adipiscing elit', 'Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea', 'Duis aute irure dolor in reprehenderit in voluptate velit esse', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa'],
       },
       {
         id: 2,

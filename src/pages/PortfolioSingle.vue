@@ -16,7 +16,7 @@ export default {
     };
   },
   mounted() {
-     this.loadPostDetails(this.$route.params.id);
+    this.loadPostDetails(this.$route.params.id);
   },
   methods: {
     loadPostDetails(postId) {

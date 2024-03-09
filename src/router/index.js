@@ -6,6 +6,7 @@ import Pricing from '@/pages/Pricing.vue'
 import Portfolio from '@/pages/Portfolio.vue'
 import PortfolioSingle from '@/pages/PortfolioSingle.vue'
 import Blog from '@/pages/Blog.vue'
+import BlogSingle from '@/pages/BlogSingle.vue'
 import ContactUs from '@/pages/ContactUs.vue'
 import PrivacyPolicy from '@/pages/PrivacyPolicy.vue'
 
@@ -47,6 +48,12 @@ const router = createRouter({
       path: '/blog',
       name: 'blog',
       component: Blog
+    },
+    {
+      path: '/blog/:id',
+      name: 'BlogSingle',
+      component: BlogSingle,
+      props: true
     },
     {
       path: '/contact-us',
